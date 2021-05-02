@@ -1,0 +1,78 @@
+/* `preview`
+-------------------------------------------------- */
+
+.preview {
+  @include card;
+  background-color: #fff;
+  position: relative;
+}
+
+.preview__content {
+  @include card__segment;
+  line-height: 1.3125;
+}
+
+.preview__headline {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  
+  &:focus {
+    outline: 0;
+    
+    &::after {
+      content: "";
+      height: 100%;
+      left: 0;
+      outline: 3px solid #fd0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.preview__image {
+  position: relative;
+  
+  > img {
+    display: block
+  }
+}
+
+.preview__date {
+  color: rgba(0, 0, 0, .5);
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.preview__label {
+  @include label;
+  background-color: #fd0;
+  color: #000;
+  left: 0;
+  top: 0;
+}
+
+.preview__runtime {
+  @include label;
+  background-color: rgba(0, 0, 0, .4);
+  bottom: 0;
+  color: #fff;
+  left: 0;
+  
+  &::before {
+    bottom: -4px;
+    content: "\2023";
+    font-size: 30px;
+    line-height: 0px;
+    margin-right: 4px;
+    position: relative;
+  }
+}

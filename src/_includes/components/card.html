@@ -1,0 +1,18 @@
+{% macro card(props) %}
+<div class="preview">
+  <div class="preview__image">
+    <img alt src="/images/{{ props.img }}" width="100%" />
+    {% if props.label | length %}
+      <span aria-hidden="true" class="preview__label">{{ props.label }}</span>
+    {% endif %}
+    {% if props.runtime | length %}
+      <span aria-hidden="true" class="preview__runtime">{{ props.runtime }}s</span>
+    {% endif %}
+  </div>
+  <div class="preview__content">
+    <a class="preview__headline" href="{{ props.url }}">{{ props.title }}</a>
+    <time class="preview__date" pubdate>{{ props.date }}</time>
+    <p>{{ props.desc }}</p>
+  </div>
+</div>
+{% endmacro %}

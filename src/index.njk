@@ -1,11 +1,38 @@
 {% extends "layouts/page.html" %}
 
-{% from "components/component.html" import component %}
+{% from "components/card.html" import card %}
 
 {% block content %}
-
-{# component({
-  prop: "value"
-}) #}
-
+<div class="l-fixed-width">
+  <div class="l-tiled">
+    
+    {{ card({
+      date: "14 March 2020",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      img: "code-example__cards__thumbnail-1.jpg",
+      label: "New",
+      runtime: "2:30",
+      title: "Article headline one",
+      url: "#"
+    }) }}
+    
+    {{ card({
+      date: "9 March 2020",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      img: "code-example__cards__thumbnail-2.jpg",
+      title: "Article headline two",
+      url: "#"
+    }) }}
+    
+    {{ card({
+      date: "2 March 2020",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      img: "code-example__cards__thumbnail-3.jpg",
+      runtime: "2:52",
+      title: "Article headline three",
+      url: "#"
+    }) }}
+    
+  </div>
+</div>
 {% endblock %}

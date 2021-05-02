@@ -1,0 +1,71 @@
+/* `l-tiled`
+-------------------------------------------------- */
+
+/**
+ * 1. Switch to two column layout when viewport width is 44rem (704px) plus.
+ * 2. Switch to three column layout when viewport width is 60rem (960px) plus.
+ * 3. Fallback styles for IE 10/11/
+ * 4. Fallback styles for Edge 14/15;
+ */
+
+ .l-tiled {
+  display: grid;
+  grid-column-gap: 30px;
+  grid-row-gap: 24px;
+  grid-template-columns: 1fr;
+}
+
+
+/* 1 */
+@media only screen and (min-width: 44rem) {
+  .l-tiled {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* 2 */
+@media only screen and (min-width: 60rem) {
+  .l-tiled {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 3 */
+@media only screen and (min-width:0\0) {
+  .l-tiled {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+
+  .l-tiled > * {
+    box-sizing: border-box;
+    margin: 0 30px 24px 0;
+    width: calc(910px / 3);
+  }
+
+  .l-tiled > *:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+/* 4 */
+@supports (-ms-ime-align: auto) {
+  .l-tiled {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+
+  .l-tiled > * {
+    box-sizing: border-box;
+    flex: 1;
+    margin: 0 30px 24px 0;
+    width: calc(910px / 3);
+  }
+
+  .l-tiled > *:nth-child(3n) {
+    margin-right: 0;
+  }
+}
